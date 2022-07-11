@@ -1,2 +1,2 @@
-# Genetic_Immune_escape
-Source code of the manuscript "Genetic immune escape landscape in primary and metastatic tumors"
+# Repository of the manuscript "Genetic immune escape landscape in primary and metastatic cancer"
+Source code to reproduce the analysis of the paper. 
