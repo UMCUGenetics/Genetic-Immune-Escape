@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# this script is part of internal controls
+
 input_bam_normal=$1
 input_bam_tumor=$2
 output_final_path=$3

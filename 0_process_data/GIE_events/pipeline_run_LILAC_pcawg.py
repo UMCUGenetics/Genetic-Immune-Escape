@@ -23,8 +23,8 @@ rule all:
 
 rule select_hla_locus:
     input:
-        tumor_bam=ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}T_6:29854528-32726735.bam"),
-        normal_bam = ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}R_6:29854528-32726735.bam"),
+        tumor_bam=ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}T_6:29854528-32726735.bam"), # path with the sliced tumor PCAWG .bams
+        normal_bam = ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}R_6:29854528-32726735.bam"), # path with the sliced tumor PCAWG .bams
     output:
         normal_bam=temp(f"{output_path}"+"{sample}/normal.bam"), # temp
         normal_bai=temp(f"{output_path}"+"{sample}/normal.bam.bai"),
@@ -46,13 +46,10 @@ rule run_lilac:
     params: cluster_memory = "32G"
     run:
         out = os.path.dirname(input.tumor_bam)
-        somatic_vcf= f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{wildcards.sample}-from-jar/purplesoft3.3/{wildcards.sample}T.purple.somatic.vcf.gz"
-        somatic_cnv = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{wildcards.sample}-from-jar/purplesoft3.3/{wildcards.sample}T.purple.cnv.gene.tsv"
-        sample_info = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{wildcards.sample}-from-jar/purplesoft3.3/{wildcards.sample}T.purple.purity.tsv"
+        somatic_vcf= f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{wildcards.sample}-from-jar/purplesoft3.3/{wildcards.sample}T.purple.somatic.vcf.gz" # path to purple output
+        somatic_cnv = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{wildcards.sample}-from-jar/purplesoft3.3/{wildcards.sample}T.purple.cnv.gene.tsv" # path to purple output
+        sample_info = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{wildcards.sample}-from-jar/purplesoft3.3/{wildcards.sample}T.purple.purity.tsv" # path to purple output
         path_base = os.path.join(output_path,f"{wildcards.sample}", "lilac_output")
-        #shell('java -jar /hpc/local/CentOS7/cog/software/lilac/v1/lilac_v1.0_beta.jar -sample {wildcards.sample} -ref_genome /hpc/cuppen/shared_resources/genomes/GRCh37/Sequence/genome.fa -resource_dir /hpc/local/CentOS7/cog/software/lilac/v1/resources/ '
-        #      '-reference_bam {input.normal_bam} -tumor_bam {input.tumor_bam} -output_dir {out}')
-
         shell('java -jar /hpc/local/CentOS7/cog/software/lilac/v1/lilac_v1.0.jar -sample {wildcards.sample} -ref_genome /hpc/cuppen/shared_resources/genomes/GRCh37/Sequence/genome.fa -resource_dir /hpc/local/CentOS7/cog/software/lilac/v1/resources/ '
               '-reference_bam {input.normal_bam} -tumor_bam {input.tumor_bam} -somatic_variants_file {somatic_vcf} -gene_copy_number_file {somatic_cnv} -output_dir {out}')
         shell("gzip -f {out}/*.csv")

@@ -7,18 +7,17 @@ import pandas as pd
 output_path=config["o"]
 donors_file =config["i"]
 
-selected_samples = [ os.path.basename(ff).split(".")[0] for ff in glob.glob("/hpc/cuppen/shared_resources/HMF_data/DR-104-update3/hla/*.hla.bam") if ff.split(".")[0][-1] !="R"]
+selected_samples = [ os.path.basename(ff).split(".")[0] for ff in glob.glob("/hpc/cuppen/shared_resources/HMF_data/DR-104-update3/hla/*.hla.bam") if ff.split(".")[0][-1] !="R"] # double check that the sliced .bams are present
 
 print ("number of samples", len(selected_samples),selected_samples[0])
 with open(donors_file) as f:
     df = pd.read_csv(donors_file,sep="\t")
     df=df[df["tumor_sample"].isin(selected_samples)]
 
-normal_samples = list(df["normal_sample"].values)
+normal_samples = list(df["normal_sample"].values) # needs the mapping of tumor sample with normal sample
 samples = list(df["tumor_sample"].values)
-sets = list(df["setName"].values)
 d_keys = dict(zip(samples,normal_samples))
-d_sets = dict(zip(samples,sets))
+
 # Rules
 rule all:
     input:
@@ -30,11 +29,11 @@ rule all:
 
 rule select_hla_locus: # prepare the input bams
     input:
-        tumor_bam="/hpc/cuppen/shared_resources/HMF_data/DR-104-update3/hla/{sample}.hla.bam",
+        tumor_bam="/hpc/cuppen/shared_resources/HMF_data/DR-104-update3/hla/{sample}.hla.bam", # this is the path to the tumor .bams, replace with your location
     output:
-        normal_bam=f"{output_path}"+"{sample}/normal.bam", # temp
+        normal_bam=f"{output_path}"+"{sample}/normal.bam", # tmp, will be removed
         normal_bai=f"{output_path}"+"{sample}/normal.bam.bai",
-        tumor_bam =f"{output_path}"+"{sample}/tumor.bam", # temp
+        tumor_bam =f"{output_path}"+"{sample}/tumor.bam", # tmp, will be removed
         tumor_bai =f"{output_path}"+"{sample}/tumor.bam.bai"
 
     run:
@@ -94,7 +93,7 @@ rule typing_normal_xHLA: # xHLA
     run:
         if not (os.path.exists(output.outpath)):
             os.mkdir(output.outpath)
-        shell('cd {output.outpath}; /home/cog/fmartinez/scripts/organoids_CRC/run_hla_typing_xHLA.sh {input.normal_bam} {output.outpath} {wildcards.sample}')
+        shell('run_hla_typing_xHLA.sh {input.normal_bam} {output.outpath} {wildcards.sample}')
         shell('rm {output.outpath}/*.bam')
 
 
@@ -112,7 +111,7 @@ rule typing_tumor_xHLA: # xHLA
         if not(os.path.exists(f"{output.outpath}")):
             os.mkdir(f"{output.outpath}")
 
-        shell('cd {output.outpath}; /home/cog/fmartinez/scripts/organoids_CRC/run_hla_typing_xHLA.sh {input.tumor_bam} {output.outpath} {wildcards.sample}')
+        shell('run_hla_typing_xHLA.sh {input.tumor_bam} {output.outpath} {wildcards.sample}')
         shell('rm {output.outpath}/*.bam')
 
 

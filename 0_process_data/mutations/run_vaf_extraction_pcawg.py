@@ -2,6 +2,8 @@ import os,json
 import pandas as pd
 import gzip
 
+
+
 # Config
 output_path=config["o"]
 donors_file =config["i"]
@@ -16,7 +18,7 @@ rule all:
 
 rule parsing_input:
     input:
-        input_file = "/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{sample}-from-jar/purplesoft3.3/{sample}T.purple.somatic.postprocessed.vcf.gz",
+        input_file = "/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{sample}-from-jar/purplesoft3.3/{sample}T.purple.somatic.postprocessed.vcf.gz", # This is the path with the PCAWG purple output for each sample
     output:
         parsed_muts = f"{output_path}" + "{sample}/{sample}.vaf_info.tsv.gz"
     params: cluster_memory = "24GB"

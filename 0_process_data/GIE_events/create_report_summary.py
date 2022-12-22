@@ -516,9 +516,9 @@ def run(input_dir,timing,sample,path_fusions,path_lilac,path_diversity,output_fi
 
     loh_focal, loh_non_focal, loh_hfocal = "", "", ""
     if loh_lilac:
-        path_cnv = f"/hpc/cuppen/shared_resources/HMF_data/DR-104-update4/somatics/{sample}/purple/{sample}.purple.cnv.gene.tsv"
+        path_cnv = f"/hpc/cuppen/shared_resources/HMF_data/DR-104-update4/somatics/{sample}/purple/{sample}.purple.cnv.gene.tsv" # this needs to adjusted to your location
         if sample.startswith("DO"): # PCAWG
-            path_cnv = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{sample}-from-jar/purplesoft3.3/{sample}T.purple.cnv.gene.tsv"
+            path_cnv = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{sample}-from-jar/purplesoft3.3/{sample}T.purple.cnv.gene.tsv" # this needs to adjusted to your location
         cnv = pd.read_csv(path_cnv,sep="\t")
         cnv = cnv[cnv["gene"].isin(["HLA-A","HLA-B","HLA-C"])][["gene","minRegionStart","minRegionEnd"]]
         cnv["len"] = cnv.apply(lambda row: row["minRegionEnd"] - row["minRegionStart"],axis=1)
@@ -533,9 +533,9 @@ def run(input_dir,timing,sample,path_fusions,path_lilac,path_diversity,output_fi
 
     imbalance_hfocal, imbalance_focal, imbalance_non_focal = "", "", ""
     if imbalance_lilac:
-        path_cnv = f"/hpc/cuppen/shared_resources/HMF_data/DR-104-update4/somatics/{sample}/purple/{sample}.purple.cnv.gene.tsv"
+        path_cnv = f"/hpc/cuppen/shared_resources/HMF_data/DR-104-update4/somatics/{sample}/purple/{sample}.purple.cnv.gene.tsv" # this needs to adjusted to your location
         if sample.startswith("DO"): # PCAWG
-            path_cnv = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{sample}-from-jar/purplesoft3.3/{sample}T.purple.cnv.gene.tsv"
+            path_cnv = f"/hpc/cuppen/shared_resources/PCAWG/pipeline5/per-donor/{sample}-from-jar/purplesoft3.3/{sample}T.purple.cnv.gene.tsv" # this needs to adjusted to your location
         cnv = pd.read_csv(path_cnv,sep="\t")
         cnv = cnv[cnv["gene"].isin(["HLA-A","HLA-B","HLA-C"])][["gene","minRegionStart","minRegionEnd"]]
         cnv["len"] = cnv.apply(lambda row: row["minRegionEnd"] - row["minRegionStart"],axis=1)

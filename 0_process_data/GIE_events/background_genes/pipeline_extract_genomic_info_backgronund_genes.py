@@ -39,7 +39,7 @@ rule get_summary:
         shell('set +eu '
         ' && PS1=dummy '
         ' && . $(conda info --base)/etc/profile.d/conda.sh && conda activate global && ' \
-        'python /home/cog/fmartinez/scripts/paper_immuno_scripts/process_data/random_genes/extract_data_random_genes.py --somatic_vcf {somatic_vcf} ' \
+        'python extract_data_random_genes.py --somatic_vcf {somatic_vcf} ' \
         '--somatic_cnv {somatic_cnv} --purity_info {sample_info} --output_file {output.output_somatic_summary}')
         
 

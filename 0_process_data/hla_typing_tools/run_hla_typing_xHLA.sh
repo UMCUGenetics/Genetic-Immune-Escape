@@ -18,7 +18,7 @@ samtools view -h  $outpath/${file_name}_HLA.bam| sed -e '/^@SQ/s/SN\:/SN\:chr/' 
 echo "rm $outpath/${file_name}_HLA.bam"
 rm $outpath/${file_name}_HLA.bam
 
-# Convert to hg38 coordinates
+# Convert to hg38 coordinates, change the path to the location of the liftover binary
 echo ""
 echo "/hpc/local/CentOS7/cog/software/miniconda3/envs/global/bin/CrossMap.py bam /hpc/local/CentOS7/cog/software/xhla/hg19ToHg38.over.chain.gz $outpath/${file_name}_HLA.tmp.bam $outpath/${file_name}_HLA_hg38"
 /hpc/local/CentOS7/cog/software/miniconda3/envs/global/bin/CrossMap.py bam /hpc/local/CentOS7/cog/software/xhla/hg19ToHg38.over.chain.gz $outpath/${file_name}_HLA.tmp.bam $outpath/${file_name}_HLA_hg38
@@ -28,7 +28,7 @@ rm $outpath/${file_name}_HLA.tmp.bam
 # Run the HLA typing
 echo ""
 echo "singularity run -B $outpath/:/output/ /hpc/local/CentOS7/cog/software/xhla/xhla.sif  --sample_id ${file_name} --input_bam_path /output/${file_name}_HLA_hg38.sorted.bam  --output_path /output/"
-mkdir -p $outpath/tmp/
+mkdir -p $outpath/tmp/ # change the path the the location of your singularity container
 singularity run -B $outpath/:/output/  -B $outpath/tmp/:/tmp/ --pwd /tmp/ /hpc/local/CentOS7/cog/software/xhla/xhla.sif  --sample_id ${file_name} --input_bam_path /output/${file_name}_HLA_hg38.sorted.bam  --output_path /output/
 echo "rm $outpath/${file_name}_HLA_hg38.sorted.bam"
 rm $outpath/${file_name}_HLA_hg38.sorted.bam

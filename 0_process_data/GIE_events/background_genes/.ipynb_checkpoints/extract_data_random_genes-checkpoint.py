@@ -4,7 +4,7 @@ import allel
 import numpy as np
 import click
 
-input_path="background_genes.tsv"
+input_path="../../shared_data/background_genes.tsv"
 genes_interest=list(pd.read_csv(input_path,sep="\t")["gene"].values)
 
 valid_csqns=["structural_interaction_variant",

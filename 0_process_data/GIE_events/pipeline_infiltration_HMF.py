@@ -16,7 +16,7 @@ rule all:
 
 rule get_markers:
     input:
-        rna_file="/hpc/cuppen/shared_resources/HMF_data/DR-104-update3/isofox/{sample}/{sample}.isf.transcript_data.csv"
+        rna_file="/hpc/cuppen/shared_resources/HMF_data/DR-104-update3/isofox/{sample}/{sample}.isf.transcript_data.csv" # this is the path of isofox output, change it to your location
     output:
         output_sample=f"{output_path}" + "/{sample}.immune.infiltration.tsv"
     shell:

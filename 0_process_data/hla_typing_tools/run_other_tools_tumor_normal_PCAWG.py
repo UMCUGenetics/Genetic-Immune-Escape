@@ -20,8 +20,8 @@ rule all:
 
 rule select_hla_locus:
     input:
-        tumor_bam=ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}T_6:29854528-32726735.bam"),
-        normal_bam = ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}R_6:29854528-32726735.bam"),
+        tumor_bam=ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}T_6:29854528-32726735.bam"), # path with the sliced tumor PCAWG .bams
+        normal_bam = ancient("/hpc/cuppen/shared_resources/PCAWG/pipeline5/HLA/{sample}R_6:29854528-32726735.bam"), # path with the sliced normal PCAWG .bams
     output:
         normal_bam=f"{output_path}"+"{sample}/normal.bam", # temp
         normal_bai=f"{output_path}"+"{sample}/normal.bam.bai",
@@ -50,7 +50,7 @@ rule typing_tumor:
         tumor_name_bam = os.path.basename(input.tumor_bam)
         if not (os.path.exists(path_base + "/tmp")):
             os.mkdir(path_base + "/tmp")
-        shell('singularity exec -C -B {path_base}:/output/ -B {path_base}/tmp:/tmp/ -B {input_path}:/input  /hpc/local/CentOS7/cog/software/polysolver/polysolver4_new.sif /home/polysolver/scripts/shell_call_hla_type /input/{tumor_name_bam} Unknown 1 hg19 STDFQ 0 /output/')
+        shell('singularity exec -C -B {path_base}:/output/ -B {path_base}/tmp:/tmp/ -B {input_path}:/input  /hpc/local/CentOS7/cog/software/polysolver/polysolver4_new.sif /home/polysolver/scripts/shell_call_hla_type /input/{tumor_name_bam} Unknown 1 hg19 STDFQ 0 /output/') # We used the singulairty container of polysolver, the binary could also be used
 
 rule typing_normal:
     input:
@@ -69,7 +69,7 @@ rule typing_normal:
 
         input_path = os.path.dirname(input.normal_bam)
         normal_name_bam = os.path.basename(input.normal_bam)
-        shell('singularity exec -C -B {path_base}:/output/ -B {path_base}/tmp:/tmp/ -B {input_path}:/input  /hpc/local/CentOS7/cog/software/polysolver/polysolver4_new.sif /home/polysolver/scripts/shell_call_hla_type /input/{normal_name_bam} Unknown 1 hg19 STDFQ 0 /output/')
+        shell('singularity exec -C -B {path_base}:/output/ -B {path_base}/tmp:/tmp/ -B {input_path}:/input  /hpc/local/CentOS7/cog/software/polysolver/polysolver4_new.sif /home/polysolver/scripts/shell_call_hla_type /input/{normal_name_bam} Unknown 1 hg19 STDFQ 0 /output/') # We used the singulairty container of polysolver, the binary could also be used
         shell('rm -rf {path_base}/tmp')
 
 rule typing_normal_xHLA:
@@ -83,7 +83,7 @@ rule typing_normal_xHLA:
     run:
         if not (os.path.exists(output.outpath)):
             os.mkdir(output.outpath)
-        shell('cd {output.outpath}; run_hla_typing_xHLA.sh {input.normal_bam} {output.outpath} {wildcards.sample}')
+        shell('run_hla_typing_xHLA.sh {input.normal_bam} {output.outpath} {wildcards.sample}')
         shell('rm {output.outpath}/*.bam')
 
 
@@ -102,7 +102,7 @@ rule typing_tumor_xHLA:
         if not(os.path.exists(f"{output.outpath}")):
             os.mkdir(f"{output.outpath}")
 
-        shell('cd {output.outpath}; run_hla_typing_xHLA.sh {input.tumor_bam} {output.outpath} {wildcards.sample}')
+        shell('run_hla_typing_xHLA.sh {input.tumor_bam} {output.outpath} {wildcards.sample}')
         shell('rm {output.outpath}/*.bam')
 
 

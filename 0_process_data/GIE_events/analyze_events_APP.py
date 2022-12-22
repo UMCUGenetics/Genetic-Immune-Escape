@@ -5,6 +5,8 @@ import numpy as np
 import click
 
 
+path_with_genes_coordinates="../../shared_data/all_genes.37.tsv.gz" #/hpc/local/CentOS7/cog/software/polysolver/data/all_genes.37.tsv.gz
+
 # hla locus
 mhc_I = ["HLA-A","HLA-B","HLA-C"]
 mhc_I_other = ["HLA-E","HLA-H","HLA-G","HLA-F"]
@@ -308,7 +310,7 @@ def run(somatic_vcf, somatic_cnv, purity_info, germline_vcf, somatic_hla_mutatio
     # Finally, read germline mutations, neets to be annotated!
     if germline_vcf and False:
         # Load the regions file
-        df_regions = pd.read_csv("/hpc/local/CentOS7/cog/software/polysolver/data/all_genes.37.tsv.gz",sep="\t",usecols=list(range(0, 5)),
+        df_regions = pd.read_csv(path_with_genes_coordinates,sep="\t",usecols=list(range(0, 5)),
                                  names=["chr", "pos_start", "pos_end", "ensembl_gene", "gene"])
         regions = df_regions[df_regions["gene"].isin(total)].groupby(["gene", "chr", "ensembl_gene"],                                                                  as_index=False).agg(
             {"pos_start": np.nanmin, "pos_end": np.nanmax}).sort_values(["chr", "pos_start", "pos_end"])

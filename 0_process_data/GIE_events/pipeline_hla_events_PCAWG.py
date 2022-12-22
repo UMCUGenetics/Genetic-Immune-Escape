@@ -51,7 +51,7 @@ with open(donors_file) as f:
 print (donors[0])
 donors_s = []
 for donor in donors:
-    if os.path.exists(f"/hpc/cuppen/projects/P0020_genetics_immune_escape/large_scale_primary_met/processed/pcawg/lilac/{donor}/{donor}.lilac.csv.gz") and (os.path.exists(f"{output_path}" + f"{donor}/loh/{donor}.5.DNA.HLAlossPrediction_CI.xls")):# and (os.path.exists(f"{output_path}" + f"{donor}/summary/"+"somatic_mutations_APP.tsv.gz"))
+    if os.path.exists(f"/hpc/cuppen/projects/P0020_genetics_immune_escape/large_scale_primary_met/processed/pcawg/lilac/{donor}/{donor}.lilac.csv.gz") and (os.path.exists(f"{output_path}" + f"{donor}/loh/{donor}.5.DNA.HLAlossPrediction_CI.xls")):
         donors_s.append(donor)
 
 
@@ -136,7 +136,7 @@ rule typing_normal_xHLA:
     run:
         if not (os.path.exists(output.outpath)):
             os.mkdir(output.outpath)
-        shell('cd {output.outpath}; /home/cog/fmartinez/scripts/paper_immuno_scripts/process_data/run_hla_typing_xHLA.sh {input.normal_bam} {output.outpath} {wildcards.sample}')
+        shell('run_hla_typing_xHLA.sh {input.normal_bam} {output.outpath} {wildcards.sample}')
         shell('rm {output.outpath}/*.bam')
 
 
@@ -155,7 +155,7 @@ rule typing_tumor_xHLA:
         if not(os.path.exists(f"{output.outpath}")):
             os.mkdir(f"{output.outpath}")
 
-        shell('cd {output.outpath}; /home/cog/fmartinez/scripts/paper_immuno_scripts/process_data//run_hla_typing_xHLA.sh {input.tumor_bam} {output.outpath} {wildcards.sample}')
+        shell('run_hla_typing_xHLA.sh {input.tumor_bam} {output.outpath} {wildcards.sample}')
         shell('rm {output.outpath}/*.bam')
 
 
@@ -201,7 +201,7 @@ rule run_lohhla:
             os.mkdir(output.loh)
         purity_file = os.path.join(output.loh,"purity_info.txt") # this should change in real tumor samples from patients
         prepare_purity_file(wildcards.sample,input.purity,purity_file)
-        shell("/home/cog/fmartinez/scripts/paper_immuno_scripts/process_data//run_lohhla.sh {input.normal_bam} {input.tumor_bam} {output.loh} {wildcards.sample} {purity_file} {input.winners}")
+        shell("run_lohhla.sh {input.normal_bam} {input.tumor_bam} {output.loh} {wildcards.sample} {purity_file} {input.winners}")
 
 
 rule get_summary:
@@ -229,7 +229,7 @@ rule get_summary:
         shell('set +eu '
         ' && PS1=dummy '
         ' && . $(conda info --base)/etc/profile.d/conda.sh && conda activate global && ' \
-        'python /home/cog/fmartinez/scripts/paper_immuno_scripts/process_data/analyze_events_APP.py --somatic_vcf {somatic_vcf} ' \
+        'python analyze_events_APP.py --somatic_vcf {somatic_vcf} ' \
         '--somatic_cnv {somatic_cnv} --purity_info {sample_info} --somatic_hla_mutations {somatic_hla_mutations} ' \
         '--somatic_hla_indels {somatic_hla_indels} --loh_hla {input.loh_hla} --outpath {output.output_somatic_dir} {file_germline} ')
         gs = glob.glob(f"rm -r {output_path}/{wildcards.sample}/*.bam")
@@ -248,7 +248,7 @@ rule compute_divergence:
         if not (os.path.exists(output_path)):
             os.mkdir(output_path)
         create_divergence_file(input.typing_normal,output_path,wildcards.sample)
-        path_script = "/home/cog/fmartinez/scripts/paper_immuno_scripts/process_data//hla_divergence/"
+        path_script = "./hla_divergence/"
         shell(f"perl {path_script}CalculateIndividualDivergence.pl -d {path_script}AAdistMatrix_Grantham.cnv  -f {path_script}HLA_ClassI_CWDonly.fas -i {os.path.join(output_path,wildcards.sample+'.tsv')} -o {output_path} -s {wildcards.sample} ")
 
 rule prepare_report_sample:
@@ -268,5 +268,5 @@ rule prepare_report_sample:
         shell('set +eu '
         ' && PS1=dummy '
         ' && . $(conda info --base)/etc/profile.d/conda.sh && conda activate global && ' \
-        'python /home/cog/fmartinez/scripts/paper_immuno_scripts/process_data/create_report_summary.py --path_diversity {divergence_info} --input_dir {input.input_dir} {fusion_data} --timing {timing_data} --sample {wildcards.sample} --output_file {output.report_output} --path_lilac /hpc/cuppen/projects/P0020_genetics_immune_escape/large_scale_primary_met/processed/pcawg/lilac/{wildcards.sample}/')
+        'python create_report_summary.py --path_diversity {divergence_info} --input_dir {input.input_dir} {fusion_data} --timing {timing_data} --sample {wildcards.sample} --output_file {output.report_output} --path_lilac /hpc/cuppen/projects/P0020_genetics_immune_escape/large_scale_primary_met/processed/pcawg/lilac/{wildcards.sample}/')
 

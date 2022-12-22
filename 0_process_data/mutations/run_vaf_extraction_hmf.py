@@ -12,7 +12,7 @@ with open(donors_file) as f:
 samples = list(df["sample"].values)
 
 for sample in samples: 
-    if not(os.path.exists(f"/hpc/cuppen/shared_resources/HMF_data/DR-104-update4/somatics/{sample}/purple/{sample}.purple.somatic.vcf.gz")):
+    if not(os.path.exists(f"/hpc/cuppen/shared_resources/HMF_data/DR-104-update4/somatics/{sample}/purple/{sample}.purple.somatic.vcf.gz")): # This is the path of the Hartwig purple output for each sample
         samples.remove(sample)
         print (sample, " Removed")
 # Rules
