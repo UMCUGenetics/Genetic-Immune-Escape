@@ -27,7 +27,8 @@ This repository is structured as follows:
    └── GIE_events/ # To run LILAC (tumor-normal paired mode) and extract relevant patient specific information used in the manuscript
      └── background_genes/ # Scripts to extract the somatic alteration incidence of the 100 randomly selected genes (see background_genes/select_random_genes.ipynb)
    └── hla_typing_tools/ # Scripts to run LILAC, xHLA and polysolver independently for the germline and the tumor
-     
+├── external_data/ # directory with external data used by the scripts
+├── metadata/ # diretory with patient metadata used by the scripts, some files are not shared (or certain columns were removed) to avoid sharing patient-senstive data. 
 ├── README.md        # this file
 └── environment_analysisA.yaml # Anaconda environment YAML file for specific analysis
 ```
