@@ -1,0 +1,59 @@
+cancer_type	cancer_type_code	Hartwig	PCAWG	group_HMF	group_PCAWG	hmf_and_pcawg
+Acute myeloid leukemia	LAML	0.0	11.0	False	False	False
+Adrenal gland cancer	ACC	5.0	0.0	False	False	False
+Bone benign tumor	BBT	0.0	11.0	False	False	False
+Breast cancer	BRCA	777.0	161.0	True	True	True
+CNS cancer mixed	CNSOT	12.0	0.0	False	False	False
+CUP	CUP	108.0	0.0	False	False	False
+Cervix carcinoma	CESC	40.0	17.0	True	True	True
+Cholangiocarcinoma	CHOL	66.0	10.0	True	False	False
+Chronic lymphocytic leukemia	CLL	0.0	60.0	False	True	False
+Colorectum carcinoma	COREAD	620.0	42.0	True	True	True
+Diffuse large B-cell lymphoma	DLBCL	20.0	94.0	True	True	True
+Esophagus cancer	ESCA	140.0	84.0	True	True	True
+Eye Melanoma	UVM	1.0	0.0	False	False	False
+Gallbladder cancer	GBC	21.0	0.0	True	False	False
+Gastrointestinal neuroendocrine	GINET	62.0	0.0	True	False	False
+Gastrointestinal stromal tumor	GIST	68.0	0.0	True	False	False
+Gastrointestinal tract unknown	GISTOT	9.0	0.0	False	False	False
+Glioblastoma multiforme	GBM	64.0	33.0	True	True	True
+Hepatocellular carcinoma	LIHC	53.0	94.0	True	True	True
+Kidney chromophobe cancer	KICH	0.0	42.0	False	True	False
+Kidney clear cell carcinoma	KIRC	129.0	95.0	True	True	True
+Kidney papilary carcinoma	KIRP	0.0	30.0	False	True	False
+Kidney unclassified	KIOT	1.0	0.0	False	False	False
+Leiomyosarcoma	LMS	47.0	14.0	True	False	False
+Liposarcoma	LPS	25.0	16.0	True	True	True
+Lung cancer mixed	LUOT	1.0	0.0	False	False	False
+Lung neuroendocrine	LUNET	22.0	0.0	True	False	False
+Lymphoma mixed	LYOT	5.0	0.0	False	False	False
+Medulloblastoma	MBL	1.0	106.0	False	True	False
+Mesothelioma	MESO	38.0	0.0	True	False	False
+Multiple myeloma	MM	2.0	0.0	False	False	False
+Non small cell lung cancer	NSCLC	504.0	83.0	True	True	True
+Oligodendroglioma	ODG	0.0	18.0	False	True	False
+Osteosarcoma	OS	0.0	32.0	False	True	False
+Ovarian cancer	OV	165.0	49.0	True	True	True
+Pancreas carcinoma	PAAD	99.0	207.0	True	True	True
+Pancreas neuroendocrine	PANET	37.0	77.0	True	True	True
+Penile cancer	PNL	7.0	0.0	False	False	False
+Pilocytic astrocytoma	PIA	1.0	42.0	False	True	False
+Prostate carcinoma	PRAD	401.0	151.0	True	True	True
+Salivary gland cancer	SG	30.0	0.0	True	False	False
+Sarcoma various	SARC	128.0	7.0	True	False	False
+Skin Basal cell carcinoma	SKBC	7.0	0.0	False	False	False
+Skin Merkel cell carcinoma	SKME	6.0	0.0	False	False	False
+Skin Squamous cell carcinoma	SKSC	8.0	0.0	False	False	False
+Skin carcinoma other	SKOT	6.0	0.0	False	False	False
+Skin melanoma	SKCM	303.0	101.0	True	True	True
+Small cell lung cancer	SCLC	51.0	0.0	True	False	False
+Small intestine cancer	SIAD	13.0	0.0	False	False	False
+Stomach cancer	STAD	43.0	53.0	True	True	True
+Testis cancer	TEST	5.0	0.0	False	False	False
+Thymus carcinoma	THYM	8.0	0.0	False	False	False
+Thymus neuroendocrine	THYMNET	1.0	0.0	False	False	False
+Thyroid cancer	THCA	22.0	43.0	True	True	True
+Upper respiratory tract cancer	HNSC	38.0	46.0	True	True	True
+Urothelial cancer	BLCA	173.0	23.0	True	True	True
+Uterus carcinoma	UCEC	33.0	28.0	True	True	True
+Vulva and vagina cancer	VULV	13.0	0.0	False	False	False
