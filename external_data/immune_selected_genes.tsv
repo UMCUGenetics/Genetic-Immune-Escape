@@ -1,0 +1,38 @@
+Gene	Pathway	Pathway_general	References	Type mutations	Selected
+HLA-A	HLA-I genes	HLA-I	doi: 10.1038/nbt.3344 https://doi.org/10.1186/s12920-019-0544-1 https://doi.org/10.1182/blood-2019-128070 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5720478/  DOI: 10.1158/2159-8290.CD-20-0672	Non-synonymous, LOH, deep deletion	TRUE
+HLA-B	HLA-I genes	HLA-I	doi: 10.1038/nbt.3344 https://doi.org/10.1186/s12920-019-0544-1 https://doi.org/10.1182/blood-2019-128070 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5720478/  DOI: 10.1158/2159-8290.CD-20-0672	Non-synonymous, LOH, deep deletion	TRUE
+HLA-C	HLA-I genes	HLA-I	doi: 10.1038/nbt.3344 https://doi.org/10.1186/s12920-019-0544-1 https://doi.org/10.1182/blood-2019-128070 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5720478/  DOI: 10.1158/2159-8290.CD-20-0672	Non-synonymous, LOH, deep deletion	TRUE
+B2M	scaffold_mhc	Antigen Presentation Pathway	https://doi.org/10.1186/s12920-019-0544-1  https://doi.org/10.1073/pnas.2104504118 10.1111/j.1399-0039.1998.tb03082.x DOI: 10.1158/2159-8290.CD-17-1327	Truncating, deep deletion	TRUE
+CALR	scaffold_mhc	Antigen Presentation Pathway	https://doi.org/10.1016/j.molcel.2019.11.004	Truncating, deep deletion	TRUE
+CANX	scaffold_mhc				FALSE
+ERp57	scaffold_mhc				FALSE
+ERAP1	Endopeptidases				FALSE
+ERAP2	Endopeptidases				FALSE
+TAP1	transport_mhc	Antigen Presentation Pathway	https://doi.org/10.1016/S0092-8674(05)80068-6  DOI: 10.1080/2162402X.2017.1356143 doi:10.1038/nature23477	Truncating, deep deletion	TRUE
+TAP2	transport_mhc	Antigen Presentation Pathway	https://doi.org/10.1016/S0092-8674(05)80068-6  DOI: 10.1080/2162402X.2017.1356143 doi:10.1038/nature23477	Truncating, deep deletion	TRUE
+TAPBP	transport_mhc	Antigen Presentation Pathway	DOI: 10.1002/ijc.20526 doi:10.1038/nature23477	Truncating, deep deletion	TRUE
+TAPBPL	transport_mhc				FALSE
+PSME1	proteasome				FALSE
+PSME2	proteasome				FALSE
+PSME3	proteasome				FALSE
+PSME4	proteasome				FALSE
+PSME5	proteasome				FALSE
+PSME6	proteasome				FALSE
+PSME7	proteasome				FALSE
+PSMB8	immunoproteasome				FALSE
+PSMB9	immunoproteasome				FALSE
+PSMB10	immunoproteasome				FALSE
+JAK1	interferon	IFN-gamma pathway	https://pubmed.ncbi.nlm.nih.gov/29121062/  DOI: 10.1158/2159-8290.CD-16-122  https://doi.org/10.1038/ s41588-021-00779-1.	Truncating, deep deletion	TRUE
+JAK2	interferon	IFN-gamma pathway	https://pubmed.ncbi.nlm.nih.gov/29121062/  DOI: 10.1158/2159-8290.CD-16-122  https://doi.org/10.1038/ s41588-021-00779-1. https://doi.org/10.18632/oncotarget.17689	Truncating, deep deletion	TRUE
+IRF1	interferon				FALSE
+IRF2	interferon	IFN-gamma pathway	https://www-jimmunol-org.proxy.library.uu.nl/content/203/7/1999.long	Truncating, deep deletion	TRUE
+IFNGR1	interferon	IFN-gamma pathway	 https://doi-org.proxy.library.uu.nl/10.1038/s41588-021-00779-1	Truncating, deep deletion	TRUE
+IFNGR2	interferon	IFN-gamma pathway	 https://doi-org.proxy.library.uu.nl/10.1038/s41588-021-00779-1	Truncating, deep deletion	TRUE
+APLNR	interferon	IFN-gamma pathway	doi:10.1038/nature23477	Truncating, deep deletion	TRUE
+STAT1	interferon	IFN-gamma pathway	doi:10.1038/nature2347  https://doi-org.proxy.library.uu.nl/10.1038/s41588-021-00779-1	Truncating, deep deletion	TRUE
+CD58	CD58 immune receptor	CD58 immune receptor	doi:10.1038/nature2347  https://doi-org.proxy.library.uu.nl/10.1038/s41588-021-00779-1  https://doi.org/10.1016/j.ccr.2011.11.006	Truncating, deep deletion	TRUE
+NLRC5	transcription activation MHC-II	Antigen Presentation Pathway	10.1073/pnas.1602069113 DOI: 10.4049/jimmunol.1102671	Truncating, deep deletion	TRUE
+CIITA	transcription activation MHC-II	Antigen Presentation Pathway	https://doi.org/10.1016/j.ccr.2011.11.006	Truncating, deep deletion	TRUE
+RFX5	transcription activation MHC-II	Antigen Presentation Pathway	DOI: 10.1158/2159-8290.CD-17-1327  doi: 10.1002/ijc.25106	Truncating, deep deletion	TRUE
+CD274	Immune checkpoint inhibition (PD-L1)	Immune checkpoint inhibition	https://doi.org/10.1073/pnas.0611533104 DOI: 10.1007/s12032-010-9515-2	Amplification	TRUE
+SETDB1	Chromatin remodelling	Epigenetic immune regulation	https://doi.org/10.1038/s41586-021-03520-4	Amplification	TRUE
