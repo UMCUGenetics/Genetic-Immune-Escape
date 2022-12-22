@@ -19,14 +19,15 @@ https://github.com/hartwigmedical/hmftools/tree/master/lilac
 This repository is structured as follows:
 
 ```shell
-Analysis type
-└── data/            # directory where all external and intermediata data is stored
+
+ ├──create_metadata_dataset.ipynb            # This is the script to create the metadata table (Supp. Table 3) and performing the blacklisting of samples
+ 
+ ├─ 0_process_data/ # This folder contains the scripts necessary to process all raw files (.bam), somatic data (somatic mutations, CNVs) and expression (eg, T-cell infiltration) from both PCAWG and Hartwig samples
+ └── mutations/ # To process .vcf from purple into a tab-delimited format
+ └── GIE_events/ # To run LILAC (tumor-normal paired mode) and extract relevant patient specific information used in the manuscript
+     └── background_genes/ # Scripts to extract the somatic alteration incidence of the 100 randomly selected genes (see background_genes/select_random_genes.ipynb)
+ └── hla_typing_tools/ # Scripts to run LILAC, xHLA and polysolver independently for the germline and the tumor
      
-└── code/            # directory where all the code is stored
-   
-└── results/
-    ├── data/        # supplementary tables and results
-    
 ├── README.md        # this file
 └── environment_analysisA.yaml # Anaconda environment YAML file for specific analysis
 ```
