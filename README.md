@@ -27,6 +27,8 @@ This repository is structured as follows:
    └── GIE_events/ # To run LILAC (tumor-normal paired mode) and extract relevant patient specific information used in the manuscript
      └── background_genes/ # Scripts to extract the somatic alteration incidence of the 100 randomly selected genes (see background_genes/select_random_genes.ipynb)
    └── hla_typing_tools/ # Scripts to run LILAC, xHLA and polysolver independently for the germline and the tumor
+├─ 1_benchmark # Scripts and notebooks for LILAC benchmark for HLA-I typing and LOH (Figure 1)
+├─ 2_gie_prevalence # Scripts and notebooks for GIE prevalence in primary and metastatic tumors (Figure 2) and comparison (Figure 3)
 ├── external_data/ # directory with external data used by the scripts
 ├── metadata/ # diretory with patient metadata used by the scripts, some files are not shared (or certain columns were removed) to avoid sharing patient-senstive data. 
 ├── README.md        # this file
