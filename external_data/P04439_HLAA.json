@@ -1,0 +1,303 @@
+{
+    "length": 365,
+    "regions": [
+        {
+            "modelStart": 1,
+            "modelEnd": 179,
+            "colour": "#2dcf00",
+            "endStyle": "curved",
+            "end": 203,
+            "display": null,
+            "startStyle": "curved",
+            "aliEnd": 203,
+            "modelLength": 179,
+            "text": "MHC_I",
+            "href": "/family/PF00129",
+            "type": "pfama",
+            "metadata": {
+                "scoreName": "e-value",
+                "score": "1.4e-91",
+                "description": "Class I Histocompatibility antigen, domains alpha 1 and 2",
+                "end": 203,
+                "accession": "PF00129",
+                "database": "pfam",
+                "identifier": "MHC_I",
+                "aliEnd": 203,
+                "type": "Domain",
+                "aliStart": 25,
+                "start": 25
+            },
+            "aliStart": 25,
+            "start": 25
+        },
+        {
+            "modelStart": 11,
+            "modelEnd": 86,
+            "colour": "#ff5353",
+            "endStyle": "curved",
+            "end": 290,
+            "display": null,
+            "startStyle": "jagged",
+            "aliEnd": 290,
+            "modelLength": 86,
+            "text": "C1-set",
+            "href": "/family/PF07654",
+            "type": "pfama",
+            "metadata": {
+                "scoreName": "e-value",
+                "score": "3.1e-11",
+                "description": "Immunoglobulin C1-set domain",
+                "end": 290,
+                "accession": "PF07654",
+                "database": "pfam",
+                "identifier": "C1-set",
+                "aliEnd": 290,
+                "type": "Domain",
+                "aliStart": 218,
+                "start": 210
+            },
+            "aliStart": 218,
+            "start": 210
+        },
+        {
+            "modelStart": 1,
+            "modelEnd": 28,
+            "colour": "#5b5bff",
+            "endStyle": "straight",
+            "end": 364,
+            "display": null,
+            "startStyle": "straight",
+            "aliEnd": 364,
+            "modelLength": 28,
+            "text": "MHC_I_C",
+            "href": "/family/PF06623",
+            "type": "pfama",
+            "metadata": {
+                "scoreName": "e-value",
+                "score": "4.6e-13",
+                "description": "MHC_I C-terminus",
+                "end": 364,
+                "accession": "PF06623",
+                "database": "pfam",
+                "identifier": "MHC_I_C",
+                "aliEnd": 364,
+                "type": "Family",
+                "aliStart": 337,
+                "start": 337
+            },
+            "aliStart": 337,
+            "start": 337
+        }
+    ],
+    "markups": [
+        {
+            "lineColour": "#ff0000",
+            "colour": "#aaaaaa",
+            "end": 188,
+            "display": null,
+            "v_align": "top",
+            "metadata": {
+                "database": "UniProt",
+                "type": "disulphide",
+                "start": 125,
+                "end": 188
+            },
+            "type": "disulphide",
+            "start": 125
+        },
+        {
+            "lineColour": "#ff0000",
+            "colour": "#aaaaaa",
+            "end": 283,
+            "display": null,
+            "v_align": "top",
+            "metadata": {
+                "database": "UniProt",
+                "type": "disulphide",
+                "start": 227,
+                "end": 283
+            },
+            "type": "disulphide",
+            "start": 227
+        }
+    ],
+    "metadata": {
+        "database": "uniprot",
+        "identifier": "HLAA_HUMAN",
+        "organism": "Homo sapiens (Human)",
+        "description": "HLA class I histocompatibility antigen, A alpha chain",
+        "taxid": "9606",
+        "accession": "P04439"
+    },
+    "motifs": [
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 69,
+                "end": 72
+            },
+            "start": 69,
+            "end": 72,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 75,
+                "end": 81
+            },
+            "start": 75,
+            "end": 81,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 86,
+                "end": 90
+            },
+            "start": 86,
+            "end": 90,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 95,
+                "end": 96
+            },
+            "start": 95,
+            "end": 96,
+            "display": false
+        },
+        {
+            "colour": "#cccccc",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 202,
+                "end": 217
+            },
+            "start": 204,
+            "end": 209,
+            "display": null
+        },
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 244,
+                "end": 259
+            },
+            "start": 244,
+            "end": 259,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 282,
+                "end": 284
+            },
+            "start": 282,
+            "end": 284,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "disorder",
+            "metadata": {
+                "database": "IUPred",
+                "type": "disorder",
+                "start": 341,
+                "end": 348
+            },
+            "start": 341,
+            "end": 348,
+            "display": false
+        },
+        {
+            "colour": "#ffa500",
+            "type": "sig_p",
+            "metadata": {
+                "database": "Phobius",
+                "type": "sig_p",
+                "start": 1,
+                "end": 24
+            },
+            "start": 1,
+            "end": 24,
+            "display": null
+        },
+        {
+            "colour": "#ff4848",
+            "type": "transmembrane",
+            "metadata": {
+                "database": "Phobius",
+                "type": "transmembrane",
+                "start": 308,
+                "end": 332
+            },
+            "start": 308,
+            "end": 332,
+            "display": null
+        },
+        {
+            "colour": "#00ffff",
+            "type": "low_complexity",
+            "metadata": {
+                "database": "segmasker",
+                "type": "low_complexity",
+                "start": 9,
+                "end": 19
+            },
+            "start": 9,
+            "end": 19,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "low_complexity",
+            "metadata": {
+                "database": "segmasker",
+                "type": "low_complexity",
+                "start": 313,
+                "end": 330
+            },
+            "start": 313,
+            "end": 330,
+            "display": false
+        },
+        {
+            "colour": "#00ffff",
+            "type": "low_complexity",
+            "metadata": {
+                "database": "segmasker",
+                "type": "low_complexity",
+                "start": 346,
+                "end": 359
+            },
+            "start": 346,
+            "end": 359,
+            "display": false
+        }
+    ]
+}
