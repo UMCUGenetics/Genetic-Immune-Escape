@@ -17,9 +17,9 @@ snakemake --profile slurm --snakefile mutations/run_driver_pipeline_dndscv.py --
 ## 2.1 Run CNV positive selection analyses
 
 
-snakemake --profile slurm --snakefile cnv/pipeline_pos_selection_cnv.py --config i=$output_path_hmf/hmf_by_ttype.json o=$output_path_hmf/positive_selection/cnvs/ d=HMF --drop-metadata --latency-wait 20 
+snakemake --profile slurm --snakefile cnv/pipeline_pos_selection_cnv.py --config i=$output_path_hmf/hmf_by_ttype.json o=$output_path_hmf/positive_selection/cnv/ d=HMF --drop-metadata --latency-wait 20 
 
-snakemake --profile slurm --snakefile cnv/pipeline_pos_selection_cnv.py --config i=$output_path_pcawg/pcawg_by_ttype.json o=$output_path_pcawg/positive_selection/cnvs/ d=PCAWG--drop-metadata --latency-wait 20 
+snakemake --profile slurm --snakefile cnv/pipeline_pos_selection_cnv.py --config i=$output_path_pcawg/pcawg_by_ttype.json o=$output_path_pcawg/positive_selection/cnv/ d=PCAWG--drop-metadata --latency-wait 20 
 
 
 ## 2.2. Parse output positive CNV selection analysis, the output will be a subfloder out of the output_directory (eg, positive_selection/cnv/processed/) 
