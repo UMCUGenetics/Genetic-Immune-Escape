@@ -30,6 +30,8 @@ This repository is structured as follows:
 ├─ 1_benchmark # Scripts and notebooks for LILAC benchmark for HLA-I typing and LOH (Figure 1)
 ├─ 2_gie_prevalence # Scripts and notebooks for GIE prevalence in primary and metastatic tumors (Figure 2) and comparison (Figure 3)
 ├─ 3_positive_selection # Scripts and notebooks for HLA-I and non-HLA positive selection analyses (Figure 4 amd Figure 6)
+   └── scripts_positive_selection/ # Scripts to run the positive selection analyses, both for mutations and CNVs across cancer types and pancancer in Hartwig and PCAWG
+   └── analysis/ # Visualization notebooks
 ├── external_data/ # directory with external data used by the scripts
 ├── metadata/ # diretory with patient metadata used by the scripts, some files are not shared (or certain columns were removed) to avoid sharing patient-senstive data. 
 ├── README.md        # this file
