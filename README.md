@@ -34,6 +34,8 @@ This repository is structured as follows:
    └── analysis/ # Visualization notebooks
 ├─ 4_neoepitopes_LOH_selection/ # Notebooks to perform the analysis of selection of the allele with the highest neoepitope repertoire (Figure 5)
 ├─ supp_note_2_neo/ # Scripts and data to evaluate Neo tool performance (see Supp. Note 2)
+├─ background_genes # Scripts to generate and compute the simulated GIE used by the 5_features_and_gie/ and 6_tmb_and_gie/ analyses 
+├─ 5_features_and_gie/ # Scripts to analyze the association between cancer genomic and clinical features and GIE incidence (Figure 7)
 ├── external_data/ # directory with external data used by the scripts
 ├── metadata/ # diretory with patient metadata used by the scripts, some files are not shared (or certain columns were removed) to avoid sharing patient-senstive data. 
 ├── README.md        # this file
