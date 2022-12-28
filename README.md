@@ -36,6 +36,7 @@ This repository is structured as follows:
 ├─ supp_note_2_neo/ # Scripts and data to evaluate Neo tool performance (see Supp. Note 2)
 ├─ background_genes # Scripts to generate and compute the simulated GIE used by the 5_features_and_gie/ and 6_tmb_and_gie/ analyses 
 ├─ 5_features_and_gie/ # Scripts to analyze the association between cancer genomic and clinical features and GIE incidence (Figure 7)
+├─ 6_tmb_and_gie/ # Scripts to analyze the association between TMB and GIE frequency (Figure 8)
 ├── external_data/ # directory with external data used by the scripts
 ├── metadata/ # diretory with patient metadata used by the scripts, some files are not shared (or certain columns were removed) to avoid sharing patient-senstive data. 
 ├── README.md        # this file
