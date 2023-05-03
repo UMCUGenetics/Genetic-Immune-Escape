@@ -43,7 +43,8 @@ This repository is structured as follows:
 ├── external_data/ # directory with external data used by the scripts
 ├── metadata/ # diretory with patient metadata used by the scripts, some files are not shared (or certain columns were removed) to avoid sharing patient-senstive data. 
 ├── README.md        # this file
-└── environment_analysisA.yaml # Anaconda environment YAML file for specific analysis
+└── environment_analysis.yaml # Anaconda environment YAML file for the analyses of the manuscript
+└──environment_snakemake.yaml # Anaconda environment YAML file for the snakemake scripts
 ```
 
 ## Data access
