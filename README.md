@@ -13,8 +13,9 @@ LILAC can be found at:
 
 https://github.com/hartwigmedical/hmftools/tree/master/lilac
 
-NEO pipeline can be found at: 
+The neoepitope prioritization pipeline can be found at (note that this is still not in production): 
 
+https://github.com/hartwigmedical/hmftools/releases/tag/neo-v1.0
 
 ## Project Structure
 
@@ -22,7 +23,7 @@ This repository is structured as follows:
 
 ```shell
 
- ├──create_metadata_dataset.ipynb            # This is the script to create the metadata table (Supp. Table 3) and performing the blacklisting of samples
+ ├──create_metadata_dataset.ipynb            # This is the script to create the metadata table (Supp. Table 2) and performing the blacklisting of samples
  
  ├─ 0_process_data/ # This folder contains the scripts necessary to process all raw files (.bam), somatic data (somatic mutations, CNVs) and expression (eg, T-cell infiltration) from both PCAWG and Hartwig samples
    └── mutations/ # To process .vcf from purple into a tab-delimited format
@@ -62,6 +63,6 @@ Raw sequencing data of the high-resolution HLA typing performed by GenDx can be 
 
 ### Supplementary Information
 
-Supplementary Tables from the manuscript include relevant information to reproduce the analysis displayed in the manuscript. 
+Supplementary Tables and Supplementary Data from the manuscript include relevant information to reproduce the analysis displayed in the manuscript. 
 
  
