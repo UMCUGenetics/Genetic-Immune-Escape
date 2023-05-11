@@ -2,11 +2,11 @@
 Source code to reproduce the analysis of the paper. 
 
 
-This repository contains all the data and analysis related to the manuscript:
+### This repository contains all the data and analysis related to the manuscript###:
 
 https://www.nature.com/articles/s41588-023-01367-1
 
-preprint: https://www.biorxiv.org/content/10.1101/2022.02.23.481444v3
+Pre-print: https://www.biorxiv.org/content/10.1101/2022.02.23.481444v3
 
 The Hartwig Medical Foundation tumor analytical pipeline can be found at: 
 
