@@ -1,9 +1,12 @@
 # Genetic immune escape landscape in primary and metastatic cancer
 Source code to reproduce the analysis of the paper. 
-## :warning::warning:Repository under construction.
 
 
-This repository contains all the data and analysis related to the preprint:https://www.biorxiv.org/content/10.1101/2022.02.23.481444v3
+This repository contains all the data and analysis related to the manuscript:
+
+https://www.nature.com/articles/s41588-023-01367-1
+
+preprint: https://www.biorxiv.org/content/10.1101/2022.02.23.481444v3
 
 The Hartwig Medical Foundation tumor analytical pipeline can be found at: 
 
