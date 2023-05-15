@@ -52,7 +52,7 @@ This repository is structured as follows:
 
 ## Data access
 
-Please see https://www.biorxiv.org/content/10.1101/2022.06.17.496528v1 and
+Please see https://www.nature.com/articles/s41586-023-06054-z and
 https://github.com/UMCUGenetics/primary-met-wgs-comparison for further description of the original data
 
 ### access PCAWG data
